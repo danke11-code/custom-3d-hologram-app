@@ -3,6 +3,7 @@ import cors from 'cors';
 import path from 'path';
 import converterRouter from './routes/converter';
 import uploaderRouter from './routes/uploader';
+import connectionRouter from './routes/connection';
 
 const app = express();
 app.use(cors());
@@ -13,6 +14,7 @@ app.use('/output', express.static(OUTPUT_DIR));
 
 app.use('/api/converter', converterRouter);
 app.use('/api/uploader', uploaderRouter);
+app.use('/api/connection', connectionRouter);
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
