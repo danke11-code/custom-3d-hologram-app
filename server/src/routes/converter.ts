@@ -5,7 +5,7 @@ import { convertMediaHandler, getJobsHandler, downloadBinHandler } from '../serv
 
 const router = Router();
 
-const TMP_DIR = path.join(process.cwd(), 'server', 'tmp');
+const TMP_DIR = path.join(path.resolve(__dirname, '..', '..'), 'tmp');
 
 const storage = multer.diskStorage({
   destination: (_req, _file, cb) => cb(null, TMP_DIR),

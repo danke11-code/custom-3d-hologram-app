@@ -9,7 +9,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const OUTPUT_DIR = path.join(process.cwd(), 'server', 'output');
+const ROOT_DIR = path.resolve(__dirname, '..');
+const OUTPUT_DIR = path.join(ROOT_DIR, 'output');
 app.use('/output', express.static(OUTPUT_DIR));
 
 app.use('/api/converter', converterRouter);

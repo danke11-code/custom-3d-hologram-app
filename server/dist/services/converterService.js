@@ -14,8 +14,9 @@ const path_1 = __importDefault(require("path"));
 const crypto_1 = __importDefault(require("crypto"));
 const uuid_1 = require("uuid");
 fluent_ffmpeg_1.default.setFfmpegPath(ffmpeg_static_1.default || 'ffmpeg');
-const OUTPUT_DIR = path_1.default.join(process.cwd(), 'server', 'output');
-const TMP_DIR = path_1.default.join(process.cwd(), 'server', 'tmp');
+const ROOT_DIR = path_1.default.resolve(__dirname, '..', '..');
+const OUTPUT_DIR = path_1.default.join(ROOT_DIR, 'output');
+const TMP_DIR = path_1.default.join(ROOT_DIR, 'tmp');
 if (!fs_1.default.existsSync(OUTPUT_DIR))
     fs_1.default.mkdirSync(OUTPUT_DIR, { recursive: true });
 if (!fs_1.default.existsSync(TMP_DIR))

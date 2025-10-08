@@ -7,7 +7,7 @@ exports.uploadBinsHandler = uploadBinsHandler;
 const fs_1 = __importDefault(require("fs"));
 const net_1 = __importDefault(require("net"));
 const path_1 = __importDefault(require("path"));
-const OUTPUT_DIR = path_1.default.join(process.cwd(), 'server', 'output');
+const OUTPUT_DIR = path_1.default.join(path_1.default.resolve(__dirname, '..', '..'), 'output');
 async function uploadBinsHandler(req, res) {
     const { ip, port, files } = req.body;
     if (!ip || !Array.isArray(files) || files.length === 0) {

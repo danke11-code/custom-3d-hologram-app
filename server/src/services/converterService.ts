@@ -9,8 +9,9 @@ import { v4 as uuidv4 } from 'uuid';
 
 ffmpeg.setFfmpegPath((ffmpegStatic as unknown as string) || 'ffmpeg');
 
-const OUTPUT_DIR = path.join(process.cwd(), 'server', 'output');
-const TMP_DIR = path.join(process.cwd(), 'server', 'tmp');
+const ROOT_DIR = path.resolve(__dirname, '..', '..');
+const OUTPUT_DIR = path.join(ROOT_DIR, 'output');
+const TMP_DIR = path.join(ROOT_DIR, 'tmp');
 
 if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 if (!fs.existsSync(TMP_DIR)) fs.mkdirSync(TMP_DIR, { recursive: true });

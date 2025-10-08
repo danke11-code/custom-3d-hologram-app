@@ -3,7 +3,7 @@ import fs from 'fs';
 import net from 'net';
 import path from 'path';
 
-const OUTPUT_DIR = path.join(process.cwd(), 'server', 'output');
+const OUTPUT_DIR = path.join(path.resolve(__dirname, '..', '..'), 'output');
 
 export async function uploadBinsHandler(req: Request, res: Response) {
   const { ip, port, files } = req.body as { ip: string; port?: number; files: string[] };
